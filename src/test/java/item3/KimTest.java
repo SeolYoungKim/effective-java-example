@@ -35,7 +35,7 @@ class KimTest {
                     try {
                         Kim reflectedKim = (Kim) constructor.newInstance();
                         System.out.println("reflectedKim = " + reflectedKim);
-                    } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    } catch (InstantiationException | IllegalAccessException | UnsupportedOperationException | InvocationTargetException e) {
                         System.out.println("객체가 생성되지 않습니다!!! 해당 객체는 싱글톤으로 유지되어야 합니다.");
                     }
                 });

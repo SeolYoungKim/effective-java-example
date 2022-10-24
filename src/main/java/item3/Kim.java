@@ -6,7 +6,7 @@ public class Kim {
 
     private Kim() {
         if (SINGLETON_KIM != null) {
-            throw new IllegalAccessError("이미 생성되어 있는 객체입니다.");
+            throw new UnsupportedOperationException("이미 생성되어 있는 객체입니다.");
         }
     }
 }
