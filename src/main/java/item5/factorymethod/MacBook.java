@@ -2,6 +2,8 @@ package item5.factorymethod;
 
 import item5.di.AppleSiliconChip;
 
+import java.util.function.Supplier;
+
 public class MacBook {
 
     /**
@@ -15,8 +17,12 @@ public class MacBook {
     private MacBook() {
     }
 
-    public MacBook(AppleSiliconChip appleSiliconChip) {
-        this.appleSiliconChip = appleSiliconChip;
+    public MacBook(AppleSiliconChipFactory appleSiliconChipFactory) {
+        this.appleSiliconChip = appleSiliconChipFactory.getAppleSiliconChip();
+    }
+
+    public MacBook(Supplier<AppleSiliconChip> appleSiliconChipSupplier) {
+        this.appleSiliconChip = appleSiliconChipSupplier.get();
     }
 
     public boolean on(boolean power) {
