@@ -8,6 +8,6 @@ public class DefaultAppleSiliconChipFactory implements AppleSiliconChipFactory{
 
     @Override
     public AppleSiliconChip getAppleSiliconChip() {
-        return new M2();
+        return new M1();
     }
 }
