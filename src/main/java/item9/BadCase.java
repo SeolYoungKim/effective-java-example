@@ -6,7 +6,7 @@ public class BadCase {
     /**
      * 아래 방법의 문제점
      * 1. 지저분함.
-     * 2. 두번째 발생한 예외가 첫번째 발생한 예외를 삼킨다. -> stackTrace에 첫번째 예외만 남음. (디버그 힘듬)
+     * 2. 두번째 발생한 예외가 첫번째 발생한 예외를 삼킨다. -> stackTrace에 두번째(마지막) 예외만 남음. (디버그 힘듬)
      * 한번에 해도 되지 않냐? -> 안된다 -> leak이 생긴다.
      * finally {
      * bw.close();
@@ -23,6 +23,17 @@ public class BadCase {
             } finally {
                 bw.close();
             }
+        } finally {
+            br.close();
+        }
+
+        return "아무튼 정답임.";
+    }
+
+    public static String supressEx(String a, String b) throws IOException {
+        BufferedReader br = new HaHaBufferedReader(new InputStreamReader(System.in));
+        try {
+            br.readLine();
         } finally {
             br.close();
         }

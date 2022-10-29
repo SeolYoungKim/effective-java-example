@@ -17,6 +17,16 @@ public class GoodCase {
         return "아무튼 정답임.";
     }
 
+    public static String supressEx(String a, String b) throws IOException {
+        try (BufferedReader br = new HaHaBufferedReader(new InputStreamReader(System.in))) {
+
+            br.readLine();
+            br.close();
+        }
+
+        return "아무튼 정답임.";
+    }
+
     /*
       Suppressed Exception
       - 위 코드에서 br.readLine()과 br.close()(코드엔 없지만)에서 동시에 예외가 발생한다면,
