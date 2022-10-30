@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GoodCaseTest {
 
-    @DisplayName("첫번째 예외를 보여준다. 두번째 예외는 suppressed로 명시")
+    @DisplayName("첫번째 예외를 보여준다. 두번째 예외는 supressed로 명시")
     @Test
     void exTest() throws IOException {
         GoodCase.supressEx("딱", "구");
@@ -22,7 +22,7 @@ class GoodCaseTest {
         try {
             GoodCase.supressEx("딱", "구");
         } catch (Throwable e) {
-            System.out.println("첫 번째 예외 메시지" + e.getMessage());
+            System.out.println(e.getMessage());
             System.out.println("Suppressed : " + Arrays.toString(e.getSuppressed()));
         }
     }

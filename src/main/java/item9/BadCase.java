@@ -31,7 +31,7 @@ public class BadCase {
     }
 
     public static String supressEx(String a, String b) throws IOException {
-        BufferedReader br = new HaHaBufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new TestBufferedReader(new InputStreamReader(System.in));
         try {
             br.readLine();
         } finally {

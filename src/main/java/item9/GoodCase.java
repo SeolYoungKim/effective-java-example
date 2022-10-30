@@ -19,7 +19,7 @@ public class GoodCase {
     }
 
     public static String supressEx(String a, String b) throws IOException {
-        try (BufferedReader br = new HaHaBufferedReader(new InputStreamReader(System.in))) {
+        try (BufferedReader br = new TestBufferedReader(new InputStreamReader(System.in))) {
 
             br.readLine();
         }

@@ -4,23 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 
-public class HaHaBufferedReader extends BufferedReader {
+public class TestBufferedReader extends BufferedReader {
 
-    public HaHaBufferedReader(Reader in) {
+    public TestBufferedReader(Reader in) {
         super(in);
     }
 
-    public HaHaBufferedReader(Reader in, int sz) {
+    public TestBufferedReader(Reader in, int sz) {
         super(in, sz);
     }
 
     @Override
     public String readLine() throws IOException {
-        throw new IllegalArgumentException("키키키키킼키키");
+        throw new IllegalArgumentException("첫 번째 예외");
     }
 
     @Override
     public void close() throws IOException {
-        throw new IllegalArgumentException("하하하하핳ㅎ하ㅏ");
+        throw new IllegalArgumentException("두 번째 예외");
     }
 }
