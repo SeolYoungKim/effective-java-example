@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="item5.di.MacBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-30T05:42:30" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.001">
+  <properties/>
+  <testcase name="diTest()" classname="item5.di.MacBookTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

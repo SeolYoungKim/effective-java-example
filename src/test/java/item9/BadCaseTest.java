@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BadCaseTest {
 
-    @DisplayName("첫번째 예외를 보여준다. 두번째 예외는 suppressed로 명시")
+    @DisplayName("첫번째 예외는 사라진다.")
     @Test
     void exTest() throws IOException {
         BadCase.supressEx("딱", "구");
     }
 
-    @DisplayName("첫번째 예외를 보여준다.")
+    @DisplayName("첫번째 예외는 사라진다.")
     @Test
     void exTest2() throws IOException {
         try {

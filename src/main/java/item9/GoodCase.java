@@ -5,6 +5,7 @@ import java.io.*;
 public class GoodCase {
     /**
      * 아래와 같이 작성하면 코드가 짧아질 뿐만 아니라, 발생한 예외에 대해 디버그 하기 수월해진다.
+     * 멱등해야 하는 이유 -> 바이트 코드 참고.
      */
     public static String BaekJoonSolve(String a, String b) throws IOException {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +22,6 @@ public class GoodCase {
         try (BufferedReader br = new HaHaBufferedReader(new InputStreamReader(System.in))) {
 
             br.readLine();
-            br.close();
         }
 
         return "아무튼 정답임.";

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="item3.KimTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-30T05:42:30" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.017">
+  <properties/>
+  <testcase name="싱글톤이 유지된다." classname="item3.KimTest" time="0.012"/>
+  <testcase name="리플렉션으로 접근할 경우에는 접근하여 생성할 수 있다." classname="item3.KimTest" time="0.003"/>
+  <system-out><![CDATA[singletonKim1 = item3.Kim@45a37759
+singletonKim2 = item3.Kim@45a37759
+객체가 생성되지 않습니다!!! 해당 객체는 싱글톤으로 유지되어야 합니다.
+singletonKim = item3.Kim@45a37759
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="item3.GenericSingletonFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-30T05:42:30" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.085">
+  <properties/>
+  <testcase name="genericTest()" classname="item3.GenericSingletonFactoryTest" time="0.085"/>
+  <system-out><![CDATA[[123456, 이게 된다고?, item3.Lee@20ca951f, item3.Kim@45a37759]
+[123456, 이게 된다고?, item3.Lee@20ca951f, item3.Kim@45a37759]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
