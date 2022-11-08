@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BadCaseTest {
 
-    @DisplayName("첫번째 예외는 사라진다.")
-    @Test
+//    @DisplayName("첫번째 예외는 사라진다.")
+//    @Test
     void exTest() throws IOException {
         BadCase.supressEx("딱", "구");
     }

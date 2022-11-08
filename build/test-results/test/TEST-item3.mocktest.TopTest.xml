@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="item3.mocktest.TopTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-30T05:42:30" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.005">
+<testsuite name="item3.mocktest.TopTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-11-07T08:53:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.003">
   <properties/>
-  <testcase name="Top2 객체에 대해 독립적인 테스트를 할 수 있습니다." classname="item3.mocktest.TopTest" time="0.002"/>
+  <testcase name="Top2 객체에 대해 독립적인 테스트를 할 수 있습니다." classname="item3.mocktest.TopTest" time="0.001"/>
   <testcase name="Top 객체에 대해 독립적인 테스트를 할 수 없습니다." classname="item3.mocktest.TopTest" time="0.001"/>
   <system-out><![CDATA[티모가 독침을 쏩니다.
 티모가 찢겼습니다.

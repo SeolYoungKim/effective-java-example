@@ -24,9 +24,23 @@ public class Item14 {
 
         int compare4 = COMPARATOR.compare(a, c);
         System.out.println("compare4 = " + compare4);
+
+        System.out.println(Integer.MIN_VALUE - 1);
+        System.out.println(Integer.MAX_VALUE + 1);
+
+        int i = 1;
+        double d = 0.1;
+
+        System.out.println(i - d * 9);
+
+        BigDecimal bd = BigDecimal.valueOf(0.1);
+        System.out.println(BigDecimal.valueOf(1).min(bd.multiply(BigDecimal.valueOf(9))));
     }
 
-    private static final Comparator<Human> COMPARATOR = comparing((Human human) -> human.name)
+    // 성능 비교를 다시 한번 해볼때가 됨..ㅋㅋ 10% 정도 까지는 개의치않고 써도 됨.
+    // 비교가 자주 사용이 될 때, 성능 bottleneck이 여기다 싶을 때 사용하지 마라. (그럴 일이 잘 없어요)
+    // CompareTo는 natural order를 지원할 클래스에 작성하자.
+    private static final Comparator<Human> COMPARATOR = Comparator.comparing((Human human) -> human.name)
             .thenComparingInt(human -> human.age);
 }
 
