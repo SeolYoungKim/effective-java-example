@@ -13,7 +13,7 @@ public class CodeWithMeTest {
         System.getLogger("Nooo").log(Level.INFO, "나다.보바는 ");
         System.out.println(System.getLogger("Nooo").getName());
 
-
+        System.out.println(12321);
         // 딱구
         HashSet<Integer> set = new HashSet<>();
         set.add(1);
