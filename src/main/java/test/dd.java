@@ -6,7 +6,7 @@ public class dd {
     public static final String 여기는_아님 = "여기에 적으면 하드코딩";
     public static final String HI = "ㅎㅇ";
     public static final String ERROR_MESSaGE = "[ERROR] ㅎㅇ24324324";
-
+//dfsd
     public static void main(String[] args) {
         int won = WON;
         throw new IllegalArgumentException(여기는_아님);
