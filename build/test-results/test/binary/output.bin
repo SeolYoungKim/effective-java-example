@@ -1,22 +1,27 @@
-두 번째 예외
-첫 번째 예외
-ESuppressed : [java.lang.IllegalArgumentException: 두 번째 예외]
-D[123456, 이게 된다고?, item3.Kim@4ff8d125, item3.Lee@3403e2ac]
-D[123456, 이게 된다고?, item3.Kim@4ff8d125, item3.Lee@3403e2ac]
-#singletonKim1 = item3.Kim@4ff8d125
-#singletonKim2 = item3.Kim@4ff8d125
-	c객체가 생성되지 않습니다!!! 해당 객체는 싱글톤으로 유지되어야 합니다.
-	"singletonKim = item3.Kim@4ff8d125
-hahaha
-park1 = INSTANCE
-park2 = INSTANCE
-park3 = INSTANCE
-hahaha
-=[싱글톤이 유지되는 경우] instance == result : true
-B[싱글톤이 유지되는 경우] instance.equals(result) : true
-E[싱글톤이 유지되지 않는 경우] instance == result : false
-J[싱글톤이 유지되지 않는 경우] instance.equals(result) : false
-티모가 독침을 쏩니다.
-티모가 찢겼습니다.
-&판다 티모가 독침을 쏩니다.
-"판다 티모가 찢겼습니다.
+D[123456, 이게 된다고?, item3.Lee@74a6f9c1, item3.Kim@37e4d7bb]
+D[123456, 이게 된다고?, item3.Lee@74a6f9c1, item3.Kim@37e4d7bb]
+#singletonKim1 = item3.Kim@37e4d7bb
+#singletonKim2 = item3.Kim@37e4d7bb
+c객체가 생성되지 않습니다!!! 해당 객체는 싱글톤으로 유지되어야 합니다.
+"singletonKim = item3.Kim@37e4d7bb
+
+	hahaha
+
+	park1 = INSTANCE
+
+	park2 = INSTANCE
+
+	park3 = INSTANCE
+
+hahaha
+=[싱글톤이 유지되는 경우] instance == result : true
+B[싱글톤이 유지되는 경우] instance.equals(result) : true
+E[싱글톤이 유지되지 않는 경우] instance == result : false
+J[싱글톤이 유지되지 않는 경우] instance.equals(result) : false
+티모가 독침을 쏩니다.
+티모가 찢겼습니다.
+&판다 티모가 독침을 쏩니다.
+"판다 티모가 찢겼습니다.
+두 번째 예외
+첫 번째 예외
+ESuppressed : [java.lang.IllegalArgumentException: 두 번째 예외]

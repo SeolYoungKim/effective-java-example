@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="item9.BadCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-07T08:53:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.029">
+<testsuite name="item9.BadCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-18T07:17:50" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.001">
   <properties/>
-  <testcase name="첫번째 예외는 사라진다." classname="item9.BadCaseTest" time="0.029"/>
+  <testcase name="첫번째 예외는 사라진다." classname="item9.BadCaseTest" time="0.001"/>
   <system-out><![CDATA[두 번째 예외
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

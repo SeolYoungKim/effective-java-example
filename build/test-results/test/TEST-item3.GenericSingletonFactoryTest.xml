@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="item3.GenericSingletonFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-07T08:53:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.066">
+<testsuite name="item3.GenericSingletonFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-18T07:17:50" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.094">
   <properties/>
-  <testcase name="genericTest()" classname="item3.GenericSingletonFactoryTest" time="0.066"/>
-  <system-out><![CDATA[[123456, 이게 된다고?, item3.Kim@4ff8d125, item3.Lee@3403e2ac]
-[123456, 이게 된다고?, item3.Kim@4ff8d125, item3.Lee@3403e2ac]
+  <testcase name="genericTest()" classname="item3.GenericSingletonFactoryTest" time="0.094"/>
+  <system-out><![CDATA[[123456, 이게 된다고?, item3.Lee@74a6f9c1, item3.Kim@37e4d7bb]
+[123456, 이게 된다고?, item3.Lee@74a6f9c1, item3.Kim@37e4d7bb]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

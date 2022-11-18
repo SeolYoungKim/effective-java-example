@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="item9.GoodCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-07T08:53:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.009">
+<testsuite name="item9.GoodCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-18T07:17:50" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.003">
   <properties/>
-  <testcase name="첫 번째 예외를 보여준다." classname="item9.GoodCaseTest" time="0.009"/>
+  <testcase name="첫 번째 예외를 보여준다." classname="item9.GoodCaseTest" time="0.003"/>
   <system-out><![CDATA[첫 번째 예외
 Suppressed : [java.lang.IllegalArgumentException: 두 번째 예외]
 ]]></system-out>
