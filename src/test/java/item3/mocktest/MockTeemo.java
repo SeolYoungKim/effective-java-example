@@ -1,6 +1,6 @@
 package item3.mocktest;
 
-import item3.mocktest_success.Teemo;
+import chapter_02.item3.mocktest_success.Teemo;
 
 public class MockTeemo implements Teemo {
     @Override

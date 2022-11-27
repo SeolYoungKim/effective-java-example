@@ -1,5 +1,7 @@
 package item5.di;
 
+import chapter_02.item5.di.AppleSiliconChip;
+
 public class MockAppleSiliconChip implements AppleSiliconChip {
     @Override
     public int cpuCore() {

@@ -1,8 +1,7 @@
 package item3;
 
-import item3.SerializeSingletonFail;
-import item3.SerializeSingletonOk;
-import org.assertj.core.api.Assertions;
+import chapter_02.item3.SerializeSingletonFail;
+import chapter_02.item3.SerializeSingletonOk;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
