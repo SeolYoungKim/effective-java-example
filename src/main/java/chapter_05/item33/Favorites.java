@@ -42,9 +42,15 @@ public class Favorites {
         f.putFavorite(Integer.class, 0xcafebabe);
         f.putFavorite(Class.class, Favorites.class);
 
+        f.putFavorite(List.class, List.of(1, 2, 3));  // 구분이 안된다..
+        f.putFavorite(List.class, List.of("a", "b", "c"));
+//        List<Integer>.class  // 이런건 없다.
+
         String favoriteString = f.getFavorite(String.class);
         Integer favoriteInteger = f.getFavorite(Integer.class);
         Class<?> favoriteClass = f.getFavorite(Class.class);
+        List list = f.getFavorite(List.class);
+        list.forEach(System.out::println);
 
         System.out.printf("%s %x %s%n", favoriteString, favoriteInteger, favoriteClass.getName());
 
