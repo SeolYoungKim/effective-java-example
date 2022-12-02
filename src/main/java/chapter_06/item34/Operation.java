@@ -8,7 +8,8 @@ public enum Operation {
     PLUS("+", (x, y) -> x + y),
     MINUS("-", (x, y) -> x - y),
     TIMES("*", (x, y) -> x * y),
-    DIVIDE("/", (x, y) -> x / y),;
+    DIVIDE("/", (x, y) -> x / y),
+    ;
 
     private final String symbol;
     private final BinaryOperator<Integer> binaryOperator;
