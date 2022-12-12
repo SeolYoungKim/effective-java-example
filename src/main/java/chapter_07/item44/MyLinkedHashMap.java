@@ -8,7 +8,7 @@ public class MyLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
     private static final int MAX_ENTRIES = 100;
 
     @Override
-    protected boolean removeEldestEntry(Entry<K, V> eldest) {  // TODO 저 eldest가 쓰이는데가 없네?
+    protected boolean removeEldestEntry(Entry<K, V> eldest) {  // TODO 저 eldest가 쓰이는데가 없네?? 뭐징
         return size() > MAX_ENTRIES;
     }
 }
