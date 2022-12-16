@@ -27,8 +27,9 @@ public class MethodReference {
 
         // 메서드와 람다가 같이 있을 때는, 람다가 메서드 참조보다 간결할 수 있다.
         // 즉, 메서드 참조로 바꾸는것이 항상 이득은 아님
+        //TODO 성능 한번 찍어봐야지
         Runnable r1 = Trash::action;  // 이게 더 보기 어렵다.
-        Runnable r2 = () -> action();
+        Runnable r2 = () -> action(); // ObjectWorld!!
 
         Function<String, String> identity = Function.identity();
         Function<String, String> func = (String str) -> str;  // Function.identity() 보다는 람다식이 더 의미 전달이 잘된다.
@@ -36,8 +37,10 @@ public class MethodReference {
         //TODO 메서드 참조 5 유형
         // 1. 정적 메서드 참조
         List<String> strs = List.of("123", "41234234", "13483857");
+        Function<String, Integer> parseInt = Integer::parseInt;
+
         List<Integer> intList = strs.stream()
-                .map(Integer::parseInt)
+                .map(parseInt)
                 .collect(Collectors.toList());
 
         // 한정적, 비한정적 관련 내용 : https://ryumodrn.tistory.com/103 참고

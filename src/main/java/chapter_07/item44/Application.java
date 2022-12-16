@@ -37,8 +37,6 @@ public class Application {
         ToLongBiFunction<Integer, Integer> toLongBiFunction = Integer::sum;  // Integer, Integer -> long
 
         ObjLongConsumer<Member> objLongConsumer = (member, l) -> member.addAge(l);
-
-
     }
 
     static class Member {
