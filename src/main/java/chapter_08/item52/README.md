@@ -165,32 +165,62 @@ executorService.submit(System.out::println);
   > - 목표 타입이 선택되기 전에는 그 의미가 정해지지 않는다.
   > - 이는 적용성 테스트(applicability test) 때 무시된다. -> 이것이 문제의 원인.
 
-- 핵심
-  - 다중정의된 메서드(혹은 생성자)들이 함수형 인터페이스를 인수로 받을 때, 비록 서로 다른 함수형 인터페이스라도 인수 위치가 같으면 혼란이 생긴다는 것.
+---
+### 위 내용에 대한 나의 뇌피셜
+> [뇌피셜 주의] 저의 지식 한계로 인한 뇌피셜입니다 ㅠㅠ 틀린부분 있을 시 지적 부탁드립니다!
+
+아무래도..`println`이 많은 오버로딩 메서드가 있어서 "부정확하다"고 표현하는 것 같은데... 
+
+이를 알아보기 위해 조금 더 찾아보던 중, 해당 내용에 대해 조슈아 블로크 선생님이 트위터를 남겨둔걸 발견했다.([해당 트위터 글](https://twitter.com/joshbloch/status/921881630809014272))
+
+뭐 명확한 답은 얻질 못했지만, 하나의 힌트는 얻을 수 있었다. 바로, `println`메서드에는 **인수를 받지 않는 메서드**도 오버로딩되어 구현되어 있다는 점이다.
+![img.png](img.png)
+
+그러면 `System.out::println`이 모호한 메서드 참조인 이유는 "인수를 받지 않는 경우"와 "인수를 받는 경우"가 구분이 안가기 때문인 것으로 추측된다. 
+실제로, 컴파일러도 아래와 같이 `println()`과 `println(boolean)`이 서로 구별이 되지 않는다고 경고하고 있다.  
+![img_1.png](img_1.png)
+
+그런데, 사실 `System.out::println`과 같은 메서드 참조는 `foreach`같은 메서드에서는 잘 쓰고 있지 않았던가..? 왜 위 예시에서는 컴파일 에러가 발생하고, `foreach`같은 곳에서는 컴파일 에러가 발생하지 않는걸까?
+
 ```java
-public class FunctionalEx {
-    static void functionalTest(Runnable runnable) {
-      System.out.println("Runnable");
-    }
-    
-    static <T> void functionalTest(Supplier<T> supplier) {
-      System.out.println("Supplier");
-    }
-    
-    static <T> void functionalTest(Consumer<T> consumer) {
-      System.out.println("Consumer");
-    }
-    
-    static <T> void functionalTest(Predicate<T> predicate) {
-      System.out.println("Predicate");
-    }
-    
-    public static void main(String[] args) {
-      functionalTest(System.out::println);  // 컴파일 안됨 
-      functionalTest(() -> System.out.println("하잉"));  // 컴파일 됨 
-    }
-}
+List<String> hi = List.of("하잉", "바잉", "뀨잉");
+hi.stream().forEach(System.out::println);
 ```
+위의 `foreach`예시를 보자. 이는 컴파일 에러가 발생하지 않는다. 이유는 다음과 같다고 추측된다. 
+- `System.out::println`이 **모호하지 않고 확실히 인자를 받는 메서드**이다.
+
+즉, 위에서 사용된 `System.out::println`은 모호하지 않고 확실하다고 볼 수 있다. `stream()`에서 인자가 넘어오기 때문에, 확실하게 `(object) -> System.out.println(object)`라고 할 수 있다.
+
+
+반면에, `excutorService.submit(System.out::println)`에 사용된 `System.out::println`은 모호하다고 볼 수 있다. 
+
+해당 메서드 참조가 **인수를 받는 경우**인지, **인수를 받지 않는 경우**인지 불확실하기 때문이다.
+
+위에서 언급된 "목표 타입이 선택되기 전에는 그 의미가 정해지지 않는다." 가 여기에 적용되는 말이 아닐까?
+
+- `submit()`의 인수로 넘겨진 `System.out::println`은 아직 목표 타입이 정해지지 않았다. (`Runnable` or `Callable`)
+- 심지어 `System.out::println`이 인수를 받는 경우인지, 인수를 받지 않는 경우인지도 정해지지 않았다.
+
+따라서, 정해진게 아무것도 없으므로 아주 모호한 상태라는 것이다. 때문에, `System.out::println`은 `submit()`에 사용될 수 없다는 뜻이 아닐까? 라고 결론지었다.
+
+아직 한번에 이해하기는 너무 어려운 내용이었던 것 같다. 일단은 조슈아 선생님이 컴파일러 개발자가 아니면 굳이 알지 않아도 된다 했으니.. 일단은 여기까지만 하고 넘어가기로 했다. (생각이 꼬리에 꼬리를 물고 해결이 안되는 지경에 이르렀기 때문 ㅠㅠ)
+
+> 또 다른 생각
+> 
+> 하지만, `submit()`은 `Runnable` 혹은 `Callable<T>`만 받는다. 그렇다면 `System.out::println`은 `Runnable`로 인식되면 그만 아닌가..? 라는 생각이 든다. 
+> 
+> 위와 같이 생각한 이유는, `System.out::println`은 `Callable<T>`의 시그니처를 만들 수 없기 때문이다. 모호하지 않을 수도 있다고 생각했지만, 자바 컴파일러는 아닌가보다 ㅠ
+
+
+> 추가 참고 자료 
+>
+> https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html
+---
+
+
+- 위 내용에 대한 핵심은..
+  - 다중정의된 메서드(혹은 생성자)들이 함수형 인터페이스를 인수로 받을 때, 비록 서로 다른 함수형 인터페이스라도 인수 위치가 같으면 혼란이 생긴다는 것.
+
 
 - 즉, 메서드를 다중정의할 때, 서로 다른 함수형 인터페이스라도 같은 위치의 인수로 받아서는 안된다.  
   - 서로 다른 함수형 인터페이스라도 서로 근본적으로 다르지 않다는 뜻 
@@ -217,8 +247,8 @@ FunctionalEx.java:16: warning: [overloads] <T#1>functionalTest(Consumer<T#1>) in
 - 상대적으로 더 특수한 다중정의 메서드에서 덜 특수한 다중정의 메서드로 일 넘겨서 문제 없게 만드는 방법
 ```java
 public boolean contentEquals(StringBuffer sb) {
-        return contentEquals((CharSequence) sb);
-        }
+    return contentEquals((CharSequence) sb);
+}
 ```
 
 ### String의 valueOf()
@@ -228,8 +258,15 @@ public boolean contentEquals(StringBuffer sb) {
 ---
 ## 정리 
 - 다중정의를 허용한다고, 반드시 활용하란 뜻은 아님
+
+
 - 매개변수 수가 같을 땐 다중정의를 피하자 
   - 생성자는 해당 조언을 따르기 어려울 수 있다. 헷갈릴만한 매개변수는 형변환 하여 정확한 다중정의 메서드가 선택되도록 하자
+
+
 - 기존 클래스를 수정해 새로운 인터페이스를 구현해야 할 때는 같은 객체를 입력받는 다중정의 메서드들이 모두 동일하게 동작하도록 만들자.
 
 
+---
+## 짧은 내 생각!
+결론은 메서드 오버로딩은 조심해서 쓰라는 것 같다. 컴파일러가 구분하지 못하는 이유를 찾아 헤맸으나, 이렇다 할 성과는 보지 못한 것 같다.. 나중에 지식을 더 많이 쌓은 후에 깊은 뜻을 헤아려보도록 해야곘다. (아니면 기선님 강의 존버라도..ㅋㅋㅋ) 
