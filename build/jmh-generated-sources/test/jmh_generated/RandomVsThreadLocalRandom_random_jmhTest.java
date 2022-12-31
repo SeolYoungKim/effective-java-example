@@ -32,8 +32,8 @@ import org.openjdk.jmh.results.ScalarResult;
 import org.openjdk.jmh.results.AggregationPolicy;
 import org.openjdk.jmh.runner.FailureAssistException;
 
-import test.jmh_generated.ParallelBenchmark_jmhType;
-public final class ParallelBenchmark_parallelPi_jmhTest {
+import test.jmh_generated.RandomVsThreadLocalRandom_jmhType;
+public final class RandomVsThreadLocalRandom_random_jmhTest {
 
     byte p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     byte p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -58,7 +58,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
     Blackhole blackhole;
     Control notifyControl;
 
-    public BenchmarkTaskResult parallelPi_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult random_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -68,24 +68,24 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            ParallelBenchmark_jmhType l_parallelbenchmark0_0 = _jmh_tryInit_f_parallelbenchmark0_0(control);
+            RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0 = _jmh_tryInit_f_randomvsthreadlocalrandom0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                l_randomvsthreadlocalrandom0_0.random();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            parallelPi_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_parallelbenchmark0_0);
+            random_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_randomvsthreadlocalrandom0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                    l_randomvsthreadlocalrandom0_0.random();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -94,7 +94,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_parallelbenchmark0_0 = null;
+                f_randomvsthreadlocalrandom0_0 = null;
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -104,19 +104,19 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "parallelPi", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "random", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void parallelPi_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, ParallelBenchmark_jmhType l_parallelbenchmark0_0) throws Throwable {
+    public static void random_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+            l_randomvsthreadlocalrandom0_0.random();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -125,7 +125,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
     }
 
 
-    public BenchmarkTaskResult parallelPi_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult random_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -135,24 +135,24 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            ParallelBenchmark_jmhType l_parallelbenchmark0_0 = _jmh_tryInit_f_parallelbenchmark0_0(control);
+            RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0 = _jmh_tryInit_f_randomvsthreadlocalrandom0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                l_randomvsthreadlocalrandom0_0.random();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            parallelPi_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_parallelbenchmark0_0);
+            random_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_randomvsthreadlocalrandom0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                    l_randomvsthreadlocalrandom0_0.random();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -161,7 +161,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_parallelbenchmark0_0 = null;
+                f_randomvsthreadlocalrandom0_0 = null;
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -171,19 +171,19 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "parallelPi", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "random", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void parallelPi_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, ParallelBenchmark_jmhType l_parallelbenchmark0_0) throws Throwable {
+    public static void random_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+            l_randomvsthreadlocalrandom0_0.random();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -192,7 +192,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
     }
 
 
-    public BenchmarkTaskResult parallelPi_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult random_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -202,14 +202,14 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            ParallelBenchmark_jmhType l_parallelbenchmark0_0 = _jmh_tryInit_f_parallelbenchmark0_0(control);
+            RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0 = _jmh_tryInit_f_randomvsthreadlocalrandom0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                l_randomvsthreadlocalrandom0_0.random();
                 res.allOps++;
             }
 
@@ -218,12 +218,12 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             int batchSize = iterationParams.getBatchSize();
             int opsPerInv = benchmarkParams.getOpsPerInvocation();
             SampleBuffer buffer = new SampleBuffer();
-            parallelPi_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_parallelbenchmark0_0);
+            random_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_randomvsthreadlocalrandom0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                    l_randomvsthreadlocalrandom0_0.random();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -232,21 +232,21 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_parallelbenchmark0_0 = null;
+                f_randomvsthreadlocalrandom0_0 = null;
             }
             res.allOps += res.measuredOps * batchSize;
             res.allOps *= opsPerInv;
             res.allOps /= batchSize;
             res.measuredOps *= opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "parallelPi", buffer, benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "random", buffer, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void parallelPi_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, ParallelBenchmark_jmhType l_parallelbenchmark0_0) throws Throwable {
+    public static void random_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0) throws Throwable {
         long realTime = 0;
         long operations = 0;
         int rnd = (int)System.nanoTime();
@@ -261,7 +261,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+                l_randomvsthreadlocalrandom0_0.random();
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -279,7 +279,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
     }
 
 
-    public BenchmarkTaskResult parallelPi_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult random_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -288,7 +288,7 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             this.blackhole = new Blackhole("Today's password is swordfish. I understand instantiating Blackholes directly is dangerous.");
         }
         if (threadParams.getSubgroupIndex() == 0) {
-            ParallelBenchmark_jmhType l_parallelbenchmark0_0 = _jmh_tryInit_f_parallelbenchmark0_0(control);
+            RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0 = _jmh_tryInit_f_randomvsthreadlocalrandom0_0(control);
 
             control.preSetup();
 
@@ -296,42 +296,42 @@ public final class ParallelBenchmark_parallelPi_jmhTest {
             notifyControl.startMeasurement = true;
             RawResults res = new RawResults();
             int batchSize = iterationParams.getBatchSize();
-            parallelPi_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_parallelbenchmark0_0);
+            random_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_randomvsthreadlocalrandom0_0);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_parallelbenchmark0_0 = null;
+                f_randomvsthreadlocalrandom0_0 = null;
             }
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             long totalOps = opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(totalOps, totalOps);
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "parallelPi", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "random", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void parallelPi_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, ParallelBenchmark_jmhType l_parallelbenchmark0_0) throws Throwable {
+    public static void random_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, RandomVsThreadLocalRandom_jmhType l_randomvsthreadlocalrandom0_0) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            blackhole.consume(l_parallelbenchmark0_0.parallelPi());
+            l_randomvsthreadlocalrandom0_0.random();
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
     }
 
     
-    ParallelBenchmark_jmhType f_parallelbenchmark0_0;
+    RandomVsThreadLocalRandom_jmhType f_randomvsthreadlocalrandom0_0;
     
-    ParallelBenchmark_jmhType _jmh_tryInit_f_parallelbenchmark0_0(InfraControl control) throws Throwable {
+    RandomVsThreadLocalRandom_jmhType _jmh_tryInit_f_randomvsthreadlocalrandom0_0(InfraControl control) throws Throwable {
         if (control.isFailing) throw new FailureAssistException();
-        ParallelBenchmark_jmhType val = f_parallelbenchmark0_0;
+        RandomVsThreadLocalRandom_jmhType val = f_randomvsthreadlocalrandom0_0;
         if (val == null) {
-            val = new ParallelBenchmark_jmhType();
-            f_parallelbenchmark0_0 = val;
+            val = new RandomVsThreadLocalRandom_jmhType();
+            f_randomvsthreadlocalrandom0_0 = val;
         }
         return val;
     }

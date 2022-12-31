@@ -1,9 +1,9 @@
-Z[123456, 이게 된다고?, chapter_02.item3.Lee@74a6f9c1, chapter_02.item3.Kim@37e4d7bb]
-Z[123456, 이게 된다고?, chapter_02.item3.Lee@74a6f9c1, chapter_02.item3.Kim@37e4d7bb]
-.singletonKim1 = chapter_02.item3.Kim@37e4d7bb
-.singletonKim2 = chapter_02.item3.Kim@37e4d7bb
+Z[123456, 이게 된다고?, chapter_02.item3.Kim@74a6f9c1, chapter_02.item3.Lee@45a37759]
+Z[123456, 이게 된다고?, chapter_02.item3.Kim@74a6f9c1, chapter_02.item3.Lee@45a37759]
+.singletonKim1 = chapter_02.item3.Kim@74a6f9c1
+.singletonKim2 = chapter_02.item3.Kim@74a6f9c1
 c객체가 생성되지 않습니다!!! 해당 객체는 싱글톤으로 유지되어야 합니다.
--singletonKim = chapter_02.item3.Kim@37e4d7bb
+-singletonKim = chapter_02.item3.Kim@74a6f9c1
 
 	hahaha
 
@@ -21,7 +21,7 @@
 두 번째 예외
 첫 번째 예외
 ESuppressed : [java.lang.IllegalArgumentException: 두 번째 예외]
-=[싱글톤이 유지되는 경우] instance == result : true
-B[싱글톤이 유지되는 경우] instance.equals(result) : true
-E[싱글톤이 유지되지 않는 경우] instance == result : false
-J[싱글톤이 유지되지 않는 경우] instance.equals(result) : false
+=[싱글톤이 유지되는 경우] instance == result : true
+B[싱글톤이 유지되는 경우] instance.equals(result) : true
+E[싱글톤이 유지되지 않는 경우] instance == result : false
+J[싱글톤이 유지되지 않는 경우] instance.equals(result) : false

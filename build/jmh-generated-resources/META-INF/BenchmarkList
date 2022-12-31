@@ -1,2 +1,2 @@
-JMH S 22 test.ParallelBenchmark S 55 test.jmh_generated.ParallelBenchmark_parallelPi_jmhTest S 10 parallelPi S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
-JMH S 22 test.ParallelBenchmark S 57 test.jmh_generated.ParallelBenchmark_sequentialPi_jmhTest S 12 sequentialPi S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
+JMH S 30 test.RandomVsThreadLocalRandom S 59 test.jmh_generated.RandomVsThreadLocalRandom_random_jmhTest S 6 random S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
+JMH S 30 test.RandomVsThreadLocalRandom S 70 test.jmh_generated.RandomVsThreadLocalRandom_threadLocalRandom_jmhTest S 17 threadLocalRandom S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
