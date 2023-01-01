@@ -1,0 +1,2 @@
+JMH S 30 test.RandomVsThreadLocalRandom S 59 test.jmh_generated.RandomVsThreadLocalRandom_random_jmhTest S 6 random S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
+JMH S 30 test.RandomVsThreadLocalRandom S 70 test.jmh_generated.RandomVsThreadLocalRandom_threadLocalRandom_jmhTest S 17 threadLocalRandom S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chapter_02.item9.BadCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-09T06:23:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.004">
+  <properties/>
+  <testcase name="첫번째 예외는 사라진다." classname="chapter_02.item9.BadCaseTest" time="0.004"/>
+  <system-out><![CDATA[두 번째 예외
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
