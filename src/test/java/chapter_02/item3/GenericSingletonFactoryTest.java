@@ -1,14 +1,10 @@
 package chapter_02.item3;
 
-import chapter_02.item3.GenericSingletonFactory;
-import chapter_02.item3.Kim;
-import chapter_02.item3.Lee;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import static org.assertj.core.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class GenericSingletonFactoryTest {
 

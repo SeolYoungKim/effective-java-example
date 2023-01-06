@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="chapter_02.item3.LeeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-09T06:23:37" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.005">
+<testsuite name="chapter_02.item3.LeeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-06T01:29:34" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.007">
   <properties/>
-  <testcase name="공급자로 사용하기" classname="chapter_02.item3.LeeTest" time="0.003"/>
+  <testcase name="공급자로 사용하기" classname="chapter_02.item3.LeeTest" time="0.002"/>
   <testcase name="싱글톤이 유지된다" classname="chapter_02.item3.LeeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

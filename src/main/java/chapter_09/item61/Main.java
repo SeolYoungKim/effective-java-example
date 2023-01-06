@@ -20,5 +20,6 @@ public class Main {
         List<Integer> li = new ArrayList<>();
         for (int i = 1; i < 50; i += 2)
             li.add(i);
+
     }
 }
