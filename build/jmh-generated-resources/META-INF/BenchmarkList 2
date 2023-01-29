@@ -1,2 +1,0 @@
-JMH S 22 test.ParallelBenchmark S 59 test.jmh_generated.ParallelBenchmark_sumWithForLoop_jmhTest S 14 sumWithForLoop S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 
-JMH S 22 test.ParallelBenchmark S 58 test.jmh_generated.ParallelBenchmark_sumWithStream_jmhTest S 13 sumWithStream S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 7 SECONDS E E 

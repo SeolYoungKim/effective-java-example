@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         String[] sets = {"java.util.HashSet", "java.util.TreeSet"};
         int rand = ThreadLocalRandom.current().nextInt(2);

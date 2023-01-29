@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="chapter_02.item3.mocktest.TopTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-06T01:29:34" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.004">
+<testsuite name="chapter_02.item3.mocktest.TopTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-29T11:17:35" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.004">
   <properties/>
-  <testcase name="Top2 객체에 대해 독립적인 테스트를 할 수 있습니다." classname="chapter_02.item3.mocktest.TopTest" time="0.002"/>
-  <testcase name="Top 객체에 대해 독립적인 테스트를 할 수 없습니다." classname="chapter_02.item3.mocktest.TopTest" time="0.001"/>
+  <testcase name="Top2 객체에 대해 독립적인 테스트를 할 수 있습니다." classname="chapter_02.item3.mocktest.TopTest" time="0.001"/>
+  <testcase name="Top 객체에 대해 독립적인 테스트를 할 수 없습니다." classname="chapter_02.item3.mocktest.TopTest" time="0.002"/>
   <system-out><![CDATA[티모가 독침을 쏩니다.
 티모가 찢겼습니다.
 판다 티모가 독침을 쏩니다.
