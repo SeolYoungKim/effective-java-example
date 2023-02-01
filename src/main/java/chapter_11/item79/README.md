@@ -235,11 +235,13 @@ public class ObservableSetVer2<E> {
 - 락 분할(lock splitting)
 - 락 스트라이핑(lock striping)
 - 비차단 동시성 제어(nonblocking concurrency control)
+- [참고 자료](https://github.com/Java-Bom/ReadingRecord/issues/141)
 
 
 ## 여러 스레드가 호출할 가능성이 있는 메서드가 정적 필드를 수정할 경우 
 - 해당 필드를 사용하기 전에 반드시 동기화 할 것 
-- 비결정적 행동도 용인하는 클래스라면 상관 없다(????)
+- 비결정적 행동도 용인하는 클래스라면 상관 없다
+  - 비결정적 행동 == 원치않는 결과 == 버그 == 사이드이펙트 
 
 그런데, 클라이언트가 여러 스레드로 복제돼 구동되는 상황이라면
 - 다른 클라이언트에서 이 메서드를 호출하는 것을 막을 수 없음 -> 외부에서 동기화할 방법 없음 
