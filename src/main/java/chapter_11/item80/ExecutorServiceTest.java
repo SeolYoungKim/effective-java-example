@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class ExecutorServiceTest {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         final ExecutorService exec = Executors.newFixedThreadPool(6);
-        final List<Callable<Integer>> tests = List.of(new Test(), new Test(), new Test(), new Test(), new Test(),
-                new Test());
+        final List<Callable<Integer>> tests = List.of(new Test(), new Test(), new Test(),
+                new Test(), new Test(), new Test());
 
         final long before = System.currentTimeMillis();
         exec.invokeAll(tests);
