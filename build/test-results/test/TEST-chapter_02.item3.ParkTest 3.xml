@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chapter_02.item3.ParkTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-29T11:18:42" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.009">
+  <properties/>
+  <testcase name="Enum은 싱글톤이다." classname="chapter_02.item3.ParkTest" time="0.005"/>
+  <testcase name="Enum은 인터페이스를 구현해서 싱글톤으로 쓰세요" classname="chapter_02.item3.ParkTest" time="0.001"/>
+  <system-out><![CDATA[hahaha
+park1 = INSTANCE
+park2 = INSTANCE
+park3 = INSTANCE
+hahaha
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

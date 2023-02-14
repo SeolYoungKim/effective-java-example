@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="chapter_07.item44.MyLinkedHashMapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-29T11:17:35" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.01">
-  <properties/>
-  <testcase name="name()" classname="chapter_07.item44.MyLinkedHashMapTest" time="0.01"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

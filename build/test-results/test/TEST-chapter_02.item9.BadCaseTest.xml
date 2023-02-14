@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="chapter_02.item9.BadCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-29T11:18:42" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.001">
+<testsuite name="chapter_02.item9.BadCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-14T08:09:11" hostname="gimseol-yeong-ui-MacBookPro.local" time="0.001">
   <properties/>
   <testcase name="첫번째 예외는 사라진다." classname="chapter_02.item9.BadCaseTest" time="0.001"/>
   <system-out><![CDATA[두 번째 예외
