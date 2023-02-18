@@ -81,8 +81,58 @@ public class BogusPeriod {
 위의 프로그램을 수행하면, 종료 시각이 시작 시각보다 앞서는 Period 인스턴스를 만들 수 있음
 - 즉, 애써 방어적 복사로 구현한 불변식이 깨지게 되어버림
 
-위 문제를 고치려면, `Period`의 `readObject` 메서드가 `defaultReadObject` 메서드를 호춣
+위 문제를 고치려면, `Period`의 `readObject` 메서드가 `defaultReadObject` 메서드를 호춣한 후, 역직렬화된 객체가 유효한지 검사해야 함.
+- 이 유효성 검사에 실패하면 `InvalidObjectException`을 던지게 하여 잘못된 역직렬화가 일어나는 것을 막을 수 있음
 
 ```java
-
+private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+    s.defaultReadObject();
+    
+    if (start.compareTo(end) > 0) {
+        throw new InvalidObjectException(start + " after " + end);    
+    }
+}
 ```
+
+위 코드는 허용되지 않는 `Period` 인스턴스 생성을 막을 수는 있다. 
+- 하지만 한 가지 문제가 숨어있다.
+- 정상 `Period` 인스턴스에서 시작된 바이트 스트림 끝에 `private Date` 필드로의 참조를 추가하면 가변 `Period` 인스턴스를 만들 수 있음 
+  - 악의적인 객체 참조가 추가될 위험이 아직 있다는 뜻 
+- `Period`인스턴스가 불변식을 유지한 채 생성되어도, 의도적으로 내부의 값을 수정할 수 있음. 
+  - 실제로도 보안 문제를 `String`이 불변이라는 사실에 기댄 클래스들이 존재함 
+
+
+문제의 근원은 `Period`의 `readObject` 메서드가 방어적 복사를 충분히 하지 않은 데 있음. 
+- 객체를 역직렬화할 때는 클라이언트가 소유해서는 안되는 객체 참조를 갖는 필드를 **모두 반드시 방어적으로 복사**해야 함 
+  - 불변 클래스 안의 `readObject`메서드 내에서 사용되는 `private` 가변 요소를 모두 방어적으로 복사해야 함
+
+```java
+private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+    s.defaultReadObject();
+    
+    start = new Date(start.getTime());
+    end = new Date(end.getTime());
+    
+    if (start.compareTo(end) > 0) {
+        throw new InvalidObjectException(start + " after " + end);    
+    }
+}
+```
+
+위 처럼 구성해야 함 
+- 방어적 복사를 유효성 검사보다 앞서 수행해야 하고, `Date`의 `clone` 메서드는 사용하지 않았음. 
+- 두 조치 모두 `Period`를 공격으로부터 보호하는 데 필요함.
+- `final` 필드는 방어적 복사가 불가능하니 주의하자. 
+
+
+## 정리 
+- `readObject` 메서드를 작성할 때는 언제나 `public` 생성자를 작성하는 자세로 임해야 함
+- `readObject`는 어떤 바이트 스트림이 넘어오더라도 유효한 인스턴스를 만들어내야 함 
+  - 바이트 스트림이 진짜 직렬화된 인스턴스라고 가정해서는 안됨 
+- 안전한 `readObject` 메서드를 작성하는 지침
+  - `private`여야 하는 객체 참조 필드는 각 필드가 가리키는 객체를 방어적으로 복사하라. 
+    - 불변 클래스 내의 가변 요소가 이에 해당함
+  - 모든 불변식을 검사하여 어긋나는게 발견되면 `InvalidObjectException`을 던진다.
+    - 방어적 복사 다음에는 반드시 불변식 검사가 뒤따라야 한다.
+  - 역직렬화 후 객체 그래프 전체의 유효성을 검사해야 한다면 `ObjectInputValidation` 인터페이스를 사용하라 
+  - 직접적이든 간접적이든, 재정의 가능한 메서드는 호출하지 말자.
