@@ -1,13 +1,16 @@
 package item3;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import chapter_02.item3.SerializeSingletonFail;
 import chapter_02.item3.SerializeSingletonOk;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.io.*;
-
-import static org.assertj.core.api.Assertions.*;
 
 // https://madplay.github.io/post/what-is-readresolve-method-and-writereplace-method
 public class SerializeTest {
@@ -44,12 +47,12 @@ public class SerializeTest {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             ObjectOutputStream oos = new ObjectOutputStream(bos);
-            oos.writeObject(instance);
+            oos.writeObject(instance);  // ByteArrayOutputStream에 직렬화한 내용을 작성함
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        return bos.toByteArray();
+        return bos.toByteArray();  // ByteArrayOutputStream에는 직렬화된 내용이 기입되어 있음
     }
 
     private Object deserialize(byte[] serializedData) {
@@ -60,6 +63,5 @@ public class SerializeTest {
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
